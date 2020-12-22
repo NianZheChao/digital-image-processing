@@ -1,8 +1,8 @@
 I=imread('lenna.jpg');
-J=imnoise(I,'salt & pepper');
+J=imnoise(I,'salt & pepper'); %椒盐噪声
 K=imnoise(I,'gaussian',0,0.05);%加入均值为0，方差为0.005的高斯噪声 
-after=midfilt(J,3); 
-after1=avg_filter(J,3); 
+after=midfilt(J,3);  %中值滤波
+after1=avg_filter(J,3);  %均值滤波
 after2=midfilt(K,3); 
 after3=avg_filter(K,3); 
 subplot(3,3,1);

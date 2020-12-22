@@ -1,0 +1,61 @@
+I=imread('lenna.jpg');
+%加入椒盐噪声
+[width,height,z]=size(I);
+result2=I;
+%k1、k2作为判断临界点
+k1=0.1;
+k2=0.1;
+%rand(m,n)是随机生成m行n列的矩阵，每个矩阵元素都在0-1之间
+%这里k都是0.1，所以小于k的元素在矩阵中为1，反之为0
+a1=rand(width,height)<k1;
+a2=rand(width,height)<k2;
+%合成彩色图像
+t1=result2(:,:,1);
+t2=result2(:,:,2);
+t3=result2(:,:,3);
+%分成黑点 白点 随机
+t1(a1&a2)=0;
+t2(a1&a2)=0;
+t3(a1&a2)=0;
+t1(a1& ~a2)=255;
+t2(a1& ~a2)=255;
+t3(a1& ~a2)=255;
+result2(:,:,1)=t1;
+result2(:,:,2)=t2;
+result2(:,:,3)=t3;
+%加入高斯噪声
+[m,n,z]=size(I);
+y=0+0.1*randn(m,n);%二维高斯分布矩阵 0是均值 0.1是标准差
+%先将其double化，再除以255 便于后面计算
+K=double(I)/255;
+%加上噪声
+K=K+y;
+%将像素范围扩大至0--255
+K=K*255;
+%转换为uint8类型
+K=uint8(K);
+
+after=midfilt(J,3); 
+after1=avg_filter(J,3); 
+after2=midfilt(K,3); 
+after3=avg_filter(K,3); 
+subplot(3,3,1);
+imshow(I);
+title('原图像');
+subplot(3,3,2);
+imshow(result2);
+title('加入椒盐噪声后');
+subplot(3,3,3); imshow(K);
+title('加入高斯噪声之后的图像');
+subplot(3,3,4);
+imshow(after);
+title('中值滤波后的图像1');
+subplot(3,3,5);
+imshow(after1);
+title('均值滤波后的图像1');
+subplot(3,3,6);
+imshow(after2);
+title('中值滤波后的图像2');
+subplot(3,3,7);
+imshow(after3);
+title('均值滤波后的图像2');
