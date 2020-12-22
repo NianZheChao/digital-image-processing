@@ -1,0 +1,33 @@
+button {
+  width: 100%;
+  font-family: sans-serif;
+  background: url('./gears-icon.png') no-repeat left;
+  background-position-x: 10%;
+  background-position-y: 50%;
+  vertical-align: bottom;
+  background-color: #81F7F3;
+  color: black;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: bold;
+  padding: 20px 10px;
+  margin: 8px 0px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+              inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+button:hover {
+  background-color: #7AE5E1;
+}
+
+button:focus {
+outline: 0;
+}
+
+button:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+inset 2px 2px 3px rgba(0, 0, 0, .6);
+}

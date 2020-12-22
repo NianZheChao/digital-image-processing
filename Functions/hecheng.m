@@ -1,4 +1,4 @@
-img = imread('b.png');
+img = imread('test.png');
 %R通道
 R = img(:,:,1);
 %G通道
@@ -6,7 +6,7 @@ G = img(:,:,2);
 %B通道
 B = img(:,:,3);
 %Alpha通道
-[I,map,Alpha] = imread('b.png');
+[I,map,Alpha] = imread('test.png');
 background = imread('backgroundB.png');
 %计算参数
 a = Alpha/255;
