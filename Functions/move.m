@@ -1,8 +1,10 @@
-init = imread('FigP1036(blobs).tif'); % 读取图像
-[R, C] = size(init); % 获取图像大小
+f = imread('FigP1036(blobs).tif'); % 读取图像
+[R, C] = size(f); % 获取图像大小
 res = zeros(R, C); % 构造结果矩阵。每个像素点默认初始化为0（黑色）
+
 delX = 60; % 平移量X
 delY = 60; % 平移量Y
+
 tras = [1 0 delX; 0 1 delY; 0 0 1]; % 平移的变换矩阵 
 for i = 1 : R
     for j = 1 : C
@@ -12,9 +14,12 @@ for i = 1 : R
         y = temp(2, 1);
         % 变换后的位置判断是否越界
         if (x <= R) & (y <= C) & (x >= 1) & (y >= 1)
-            res(x, y) = init(i, j);
+            res(x, y) = f(i, j);
         end
     end
 end;
 
 imshow(uint8(res)); % 显示图像
+
+
+%RGB图像的平移

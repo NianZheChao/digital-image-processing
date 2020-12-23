@@ -1,0 +1,12 @@
+I=imread('apple.jpg');
+subplot(2,2,1),imshow(I);
+title('Ô­Í¼Ïñ');
+J=my_edge(I,''); 
+subplot(2,2,2),imshow(J);
+title('Roberts');
+K=my_edge(I,'sobel'); 
+subplot(2,2,3),imshow(K);
+title('sobel');
+M=my_edge(I,'prewitt'); 
+subplot(2,2,4),imshow(M);
+title('prewitt');

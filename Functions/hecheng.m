@@ -1,4 +1,7 @@
-img = imread('test.png');
+img = imread('Einstein.tif');
+background = imread('test.jpg');
+img = double(img);
+background = double(background);
 %R通道
 R = img(:,:,1);
 %G通道
@@ -6,8 +9,8 @@ G = img(:,:,2);
 %B通道
 B = img(:,:,3);
 %Alpha通道
-[I,map,Alpha] = imread('test.png');
-background = imread('backgroundB.png');
+[I,map,Alpha] = imread('Einstein.tif');
+
 %计算参数
 a = Alpha/255;
 %三通道合成
