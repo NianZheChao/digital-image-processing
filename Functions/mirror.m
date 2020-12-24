@@ -1,4 +1,4 @@
-I=imread('µÚ¶şÕÅÍ¼.jpg');
+I=imread('test.jpg');
 [M,N]=size(I);
 I_shuiping=I;
 for i=1:M
