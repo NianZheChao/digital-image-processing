@@ -1,4 +1,4 @@
-I=imread('lenna.jpg');     %读入图片
+I=imread('test1.jpg');     %读入图片
 J=rgb2gray(I);                 %将彩色图片转换为灰度图
 graydis=zeros(1,256);           %设置矩阵大小
 graydispro=zeros(1,256);
