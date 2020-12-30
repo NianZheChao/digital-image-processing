@@ -1,46 +1,98 @@
-<deployment-project plugin="plugin.apptool" plugin-version="1.0">
-  <configuration file="D:\2020\GitHub\digital-image-processing\app1.prj" location="D:\2020\GitHub\digital-image-processing" name="app1" target="target.mlapps" target-name="打包为 App">
+<deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
+  <configuration file="D:\2020\GitHub\digital-image-processing\app1.prj" location="D:\2020\GitHub\digital-image-processing" name="app1" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>app1</param.appname>
-    <param.authnamewatermark />
-    <param.email />
-    <param.company />
     <param.icon />
     <param.icons />
+    <param.version>0.8</param.version>
+    <param.authnamewatermark>QA test</param.authnamewatermark>
+    <param.email />
+    <param.company />
     <param.summary />
     <param.description />
-    <param.screenshot>C:\Users\nianzhechao\AppData\Local\Temp\tp01aae030_6a3d_49c9_9a65_66f712825ef9.png</param.screenshot>
-    <param.version>1.0</param.version>
-    <param.products.name />
-    <param.products.id />
-    <param.products.version />
-    <param.platforms />
-    <param.output>${PROJECT_ROOT}</param.output>
-    <param.guid>50f16a15-c312-4a8d-bf4f-a4c984ddd692</param.guid>
+    <param.screenshot />
+    <param.guid />
+    <param.installpath.string>\app1\</param.installpath.string>
+    <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
+    <param.logo />
+    <param.install.notes />
+    <param.target.install.notes />
+    <param.intermediate>${PROJECT_ROOT}\app1\for_testing</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}\app1\for_redistribution_files_only</param.files.only>
+    <param.output>${PROJECT_ROOT}\app1\for_redistribution</param.output>
+    <param.logdir>${PROJECT_ROOT}\app1</param.logdir>
+    <param.enable.clean.build>false</param.enable.clean.build>
+    <param.user.defined.mcr.options />
+    <param.target.type>subtarget.standalone</param.target.type>
+    <param.support.packages />
+    <param.web.mcr>true</param.web.mcr>
+    <param.package.mcr>false</param.package.mcr>
+    <param.no.mcr>false</param.no.mcr>
+    <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
+    <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
+    <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
+    <param.windows.command.prompt>true</param.windows.command.prompt>
+    <param.create.log>false</param.create.log>
+    <param.log.file />
+    <param.native.matlab>false</param.native.matlab>
+    <param.checkbox>false</param.checkbox>
+    <param.example />
+    <param.help.text>Syntax 
+	  -? 
+	 
+ Input Arguments 
+	 -?  print help on how to use the application 
+	 input arguments</param.help.text>
     <unset>
-      <param.authnamewatermark />
-      <param.email />
-      <param.company />
       <param.icon />
       <param.icons />
+      <param.email />
+      <param.company />
       <param.summary />
       <param.description />
-      <param.version />
-      <param.products.name />
-      <param.products.id />
-      <param.products.version />
-      <param.platforms />
+      <param.screenshot />
+      <param.guid />
+      <param.installpath.string />
+      <param.installpath.combo />
+      <param.logo />
+      <param.install.notes />
+      <param.target.install.notes />
+      <param.intermediate />
+      <param.files.only />
       <param.output />
+      <param.logdir />
+      <param.enable.clean.build />
+      <param.user.defined.mcr.options />
+      <param.target.type />
+      <param.support.packages />
+      <param.web.mcr />
+      <param.package.mcr />
+      <param.no.mcr />
+      <param.web.mcr.name />
+      <param.package.mcr.name />
+      <param.no.mcr.name />
+      <param.windows.command.prompt />
+      <param.create.log />
+      <param.log.file />
+      <param.native.matlab />
+      <param.checkbox />
+      <param.example />
     </unset>
     <fileset.main>
       <file>${PROJECT_ROOT}\app1.mlapp</file>
     </fileset.main>
-    <fileset.depfun>
-      <file>${PROJECT_ROOT}\my_edge.m</file>
-    </fileset.depfun>
     <fileset.resources />
     <fileset.package />
+    <fileset.depfun>
+      <file>${PROJECT_ROOT}\Functions\课设压缩\huffman.m</file>
+      <file>${PROJECT_ROOT}\Functions\课设压缩\mat2huff.m</file>
+      <file>${PROJECT_ROOT}\Functions\课设压缩\mat2lpc.m</file>
+      <file>${PROJECT_ROOT}\Functions\课设压缩\ntrop.m</file>
+      <file>${PROJECT_ROOT}\Functions\课设压缩\quantize.m</file>
+    </fileset.depfun>
     <build-deliverables>
-      <file location="D:\2020\GitHub" name="digital-image-processing" optional="false">D:\2020\GitHub\digital-image-processing</file>
+      <file location="${PROJECT_ROOT}\app1\for_testing" name="splash.png" optional="false">D:\2020\GitHub\digital-image-processing\app1\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\app1\for_testing" name="readme.txt" optional="true">D:\2020\GitHub\digital-image-processing\app1\for_testing\readme.txt</file>
+      <file location="${PROJECT_ROOT}\app1\for_testing" name="app1.exe" optional="false">D:\2020\GitHub\digital-image-processing\app1\for_testing\app1.exe</file>
     </build-deliverables>
     <workflow />
     <matlab>
